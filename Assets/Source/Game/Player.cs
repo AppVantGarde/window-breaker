@@ -206,6 +206,7 @@ public class Player : CameraActor
 
     public void AnimEvent_Release( )
     {
+        Debug.Log( "Throw" );
         AudioManager.Instance.Play( "cue_throw" );
 
         DOVirtual.DelayedCall( 1f, ( ) => { ammoCount.value -= 1; } );
