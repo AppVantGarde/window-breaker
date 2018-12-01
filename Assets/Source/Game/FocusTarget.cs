@@ -44,16 +44,16 @@ public class FocusTarget : MonoBehaviour
                 subFocusPoint.DOPath( path, _windowSet.pathDuration ).SetEase( Ease.Linear ).SetLoops( -1, LoopType.Yoyo );
             }
         }
-        else
-        {
-            if(_windowSet != null)
-            {
-                _windowSet = null;
-                subFocusPoint.DOKill( );
-            }
+        //else
+        //{
+        //    if(_windowSet != null)
+        //    {
+        //        _windowSet = null;
+        //        subFocusPoint.DOKill( );
+        //    }
 
-            subFocusPoint.position = Vector3.zero;
-        }
+        //    subFocusPoint.position = Vector3.zero;
+        //}
 
         mainFocusPoint.position = SmoothLerp.Vector3( mainFocusPoint.position, _prevSubFocusPosition, subFocusPoint.position, 5f, Time.fixedDeltaTime );
         _prevSubFocusPosition = subFocusPoint.position;

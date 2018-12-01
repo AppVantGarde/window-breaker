@@ -141,6 +141,23 @@ public class UIScreen_Gameplay : UIScreen
         messageText.DOColor( new Color( 1, 1, 1, 0 ), 0.25f ).SetDelay( 0.6f );
     }
 
+    public void ShowPerfectMessage( Vector3 worldPosition )
+    {
+        Vector2 viewPort = Camera.main.WorldToViewportPoint( worldPosition );
+
+        messageText.SetText( "Perfect" );
+        messageText.color = new Color( 0.4079687f, 1, 0.3254717f );
+        meesageTextTransform.anchorMin = viewPort;
+        meesageTextTransform.anchorMax = viewPort;
+
+        meesageTextTransform.localScale = Vector3.one;
+
+        messageText.DOColor( new Color( 1, 1, 1, 0 ), 0.25f ).SetDelay( 0.6f );
+        messageText.rectTransform.DOScale( new Vector3( 3, 3, 3 ), 0.5f );
+        messageText.rectTransform.DOAnchorMin( new Vector2( 0.5f, 0.8f), 0.5f );
+        messageText.rectTransform.DOAnchorMax( new Vector2( 0.5f, 0.8f ), 0.5f );
+    }
+
     public void BonusTimeMessage( int additionalTime )
     {
         bonusTimeText.SetText( "+" + additionalTime + " PERFECT SHOT" );

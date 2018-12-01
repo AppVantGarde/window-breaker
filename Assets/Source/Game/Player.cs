@@ -206,7 +206,9 @@ public class Player : CameraActor
 
     public void AnimEvent_Release( )
     {
-        Debug.Log( "Throw" );
+        if(!canThrow)
+            return;
+
         AudioManager.Instance.Play( "cue_throw" );
 
         DOVirtual.DelayedCall( 1f, ( ) => { ammoCount.value -= 1; } );
@@ -221,6 +223,9 @@ public class Player : CameraActor
 
         _ballHitLocation = FocusTarget.instance.mainFocusPoint.position;
         projectile.Fire( (_ballHitLocation - handSocket.transform.position).normalized, HasFever() );
+
+        if(HasFever( ))
+            _feverValue = 0;
         //rigidBody.AddForce( (_ballHitLocation - handSocket.transform.position).normalized * throwForce, ForceMode.Force );
     }
 

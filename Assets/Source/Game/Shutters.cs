@@ -19,11 +19,11 @@ public class Shutters : MonoBehaviour
         if(shutterTimes == null)
         {
             float[ ][ ] baseRanges = new float[5][ ];
-            baseRanges[0] = new float[ ] { 2.5f,     4f };   // Levels 1 - 10
-            baseRanges[1] = new float[ ] { 1.5f,    2.5f }; // Levels 11 - 20
-            baseRanges[2] = new float[ ] { 1.25f,     2f };   // Levels 21 - 30
-            baseRanges[3] = new float[ ] { 1f,      1.5f }; // Levels 31 - 40
-            baseRanges[4] = new float[ ] { 0.5f,   0.85f }; // Levels 41 - 50
+            baseRanges[0] = new float[ ] { 3.5f,     5f };   // Levels 1 - 10
+            baseRanges[1] = new float[ ] { 2.5f,    3.5f }; // Levels 11 - 20
+            baseRanges[2] = new float[ ] { 2.25f,     3f };   // Levels 21 - 30
+            baseRanges[3] = new float[ ] { 2f,      2.5f }; // Levels 31 - 40
+            baseRanges[4] = new float[ ] { 1.5f,   1.85f }; // Levels 41 - 50
 
             shutterTimes = new List<List<float[ ]>>( );
             for(int i = 0; i < baseRanges.Length; i++)
@@ -65,7 +65,14 @@ public class Shutters : MonoBehaviour
             int rangeIndex = Random.Range( 0, shutterTimes[_bucketIndex].Count );
             float shutterTime = Random.Range( shutterTimes[_bucketIndex][rangeIndex][0], shutterTimes[_bucketIndex][rangeIndex][1] );
 
+            
+
             _nextShutterAnimation += 0.75f * shutterTime + 0.5f * shutterTime * Random.value;
+
+            if(!_opened)
+                _nextShutterAnimation *= 2f;
+
+            _nextShutterAnimation = !_opened ? _nextShutterAnimation * 2 : _nextShutterAnimation * 0.5f;
         }
     }
 }

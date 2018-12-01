@@ -66,6 +66,7 @@ public class BreakableObject : MonoBehaviour
 
         if(collision.collider.tag == "Rock")
         {
+
             bool wasPerefectHit = false;
             if((transform.position - collision.contacts[0].point).sqrMagnitude <= (0.45f * 0.45))
             {
@@ -76,7 +77,7 @@ public class BreakableObject : MonoBehaviour
                 GameStateManager.Instance.shotClock.value += 2f;
 
                 GameStateManager.Instance.BonusTimeMessage( 2 );
-                GameStateManager.Instance.ShowMessage( true );
+                GameStateManager.Instance.ShowPerfectMessage( transform.position );
             }
             else
             {
@@ -85,7 +86,8 @@ public class BreakableObject : MonoBehaviour
                 GameStateManager.Instance.ShowMessage( false );
             }
 
-            if(GameStateManager.Instance.player.HasFever( ))
+            RockProjectile rock = collision.collider.GetComponent<RockProjectile>( );
+            if(rock != null && rock.isFeverBall)
             {
                 GameStateManager.Instance.feverBallExplosion.gameObject.transform.position = transform.position;
                 GameStateManager.Instance.feverBallExplosion.Play( );

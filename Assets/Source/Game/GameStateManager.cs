@@ -258,6 +258,11 @@ public class GameStateManager : MonoBehaviour
         _gameplayScreen.ShowMessage( perfect ? "PERFECT!" : _messages[UnityEngine.Random.Range(0, _messages.Length)] );
     }
 
+    public void ShowPerfectMessage( Vector3 worldPosition )
+    {
+        _gameplayScreen.ShowPerfectMessage( worldPosition );
+    }
+
     public void BonusTimeMessage( int additionalTime )
     {
         if(_gameplayScreen == null)

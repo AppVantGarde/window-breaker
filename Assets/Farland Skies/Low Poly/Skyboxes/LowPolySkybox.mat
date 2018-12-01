@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _CloudsTex:
-        m_Texture: {fileID: 8900000, guid: bfa1267ef40a77540ac2cfde9297f199, type: 3}
+        m_Texture: {fileID: 8900000, guid: bf6e148d44189344992ac3145bde0764, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MoonTex:
@@ -27,7 +27,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _StarsTex:
-        m_Texture: {fileID: 8900000, guid: 4d9b59a5208099541b49b0a8fcd22323, type: 3}
+        m_Texture: {fileID: 8900000, guid: 0b891b1d885eb654ab18d7a3a5fc87e1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _StarsTwinklingTex:
@@ -40,21 +40,21 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BottomExponent: 2.66
-    - _CloudsHeight: 0.128
+    - _CloudsHeight: -0.104
     - _CloudsRotation: 0
     - _Exponent: 1
-    - _Exposure: 1
+    - _Exposure: 1.16
     - _MoonHalo: 1
     - _MoonSize: 0.75
-    - _StarsExtinction: 2.15
+    - _StarsExtinction: 0.49
     - _StarsTwinklingSpeed: 9.21
     - _SunHalo: 0.57
     - _SunSize: 0.95
-    - _TopExponent: 1.45
+    - _TopExponent: 1.18
     m_Colors:
-    - _BottomColor: {r: 1, g: 1, b: 1, a: 1}
-    - _CloudsTint: {r: 0.5326534, g: 0.5133945, b: 0.7830189, a: 1}
-    - _MiddleColor: {r: 0.4000089, g: 0.9528302, b: 0.76720893, a: 1}
+    - _BottomColor: {r: 0.018867902, g: 0, b: 0.5754717, a: 1}
+    - _CloudsTint: {r: 0.50799215, g: 0.48885787, b: 0.7656204, a: 1}
+    - _MiddleColor: {r: 0.6759523, g: 0.9245283, b: 0.92201686, a: 1}
     - _MoonTint: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
     - _SkyBottomColor: {r: 0.016868481, g: 0, b: 0.47794116, a: 0}
     - _SkyColor: {r: 0.03529412, g: 0.41960788, b: 0.59607846, a: 1}
@@ -65,4 +65,4 @@ Material:
     - _SkyTopColor: {r: 0.2794118, g: 0.6421905, b: 1, a: 0}
     - _StarsTint: {r: 1, g: 1, b: 1, a: 1}
     - _SunTint: {r: 0.9339623, g: 0.9319528, b: 0.9295568, a: 1}
-    - _TopColor: {r: 0.82702917, g: 0.96761346, b: 0.990566, a: 1}
+    - _TopColor: {r: 0.9622642, g: 0.75480604, b: 0.67630833, a: 1}
